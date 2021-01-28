@@ -1,0 +1,58 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8c3fe41..f29bc8b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -46,12 +46,50 @@ target_compile_definitions(ChowPhaserStereo
+     FOLEYS_SHOW_GUI_EDITOR_PALLETTE=0
+     FOLEYS_ENABLE_BINARY_DATA=1)
+ 
++
++# begin JUCEAAP specific -->
++if (ANDROID)
++
++# dependencies
++find_library(log "log")
++find_library(android "android")
++find_library(glesv2 "GLESv2")
++find_library(egl "EGL")
++set(cpufeatures_lib "cpufeatures")
++set(oboe_lib "oboe")
++
++# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
++include_directories(
++        "${AAP_DIR}/native/androidaudioplugin/core/include"
++        "${AAP_DIR}/native/plugin-api/include"
++        )
++
++juce_add_module(../../external/aap-juce/modules/juceaap_audio_plugin_client)
++
++endif (ANDROID)
++# <-- end JUCEAAP specific
++
+ target_link_libraries(ChowPhaserMono PRIVATE
+     BinaryData
+     juce::juce_audio_utils
+-    foleys_gui_magic)
+-
++    foleys_gui_magic
++        juceaap_audio_plugin_client
++        ${log}
++        ${android}
++        ${glesv2}
++        ${egl}
++        ${cpufeatures_lib}
++        )
++    
+ target_link_libraries(ChowPhaserStereo PRIVATE
+     BinaryData
+     juce::juce_audio_utils
+-    foleys_gui_magic)
++    foleys_gui_magic
++        juceaap_audio_plugin_client
++        ${log}
++        ${android}
++        ${glesv2}
++        ${egl}
++        ${cpufeatures_lib}
++        )
++

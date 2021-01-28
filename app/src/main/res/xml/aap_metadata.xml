@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugins>
+  <plugin name="ChowPhaserStereo" category="Effect" author="chowdsp" manufacturer=""
+          unique-id="juceaap:43706832" library="libChowPhaserStereo_Standalone.so"
+          entrypoint="GetJuceAAPFactoryStandalone" assets="">
+    <ports>
+      <port name="Feedback" direction="input" default="0.0" maximum="0.949999988079071"
+            content="other"/>
+      <port name="Modulation" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="LFO Freq" direction="input" default="0.0" maximum="16.0"
+            content="other"/>
+      <port name="LFO Depth" direction="input" default="0.0" maximum="0.949999988079071"
+            content="other"/>
+      <port name="Freq. Mult" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="Skew" direction="input" minimum="-3.0" maximum="3.0" content="other"/>
+      <port name="Stages" direction="input" minimum="1.0" maximum="50.0"
+            content="other"/>
+      <port name="D1" direction="input" minimum="0.1000000014901161" maximum="5.0"
+            content="other"/>
+      <port name="D2" direction="input" minimum="0.1000000014901161" maximum="5.0"
+            content="other"/>
+      <port name="D3" direction="input" minimum="0.1000000014901161" maximum="5.0"
+            content="other"/>
+      <port name="Feedback" direction="input" default="0.0" maximum="0.949999988079071"
+            content="other"/>
+      <port name="Modulation" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="LFO Freq" direction="input" default="0.0" maximum="16.0"
+            content="other"/>
+      <port name="LFO Depth" direction="input" default="0.0" maximum="0.949999988079071"
+            content="other"/>
+      <port name="Freq. Mult" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="Skew" direction="input" minimum="-3.0" maximum="3.0" content="other"/>
+      <port name="Stages" direction="input" minimum="1.0" maximum="50.0"
+            content="other"/>
+      <port name="D1" direction="input" minimum="0.1000000014901161" maximum="5.0"
+            content="other"/>
+      <port name="D2" direction="input" minimum="0.1000000014901161" maximum="5.0"
+            content="other"/>
+      <port name="D3" direction="input" minimum="0.1000000014901161" maximum="5.0"
+            content="other"/>
+      <port direction="output" content="audio" name="Left"/>
+      <port direction="output" content="audio" name="Right"/>
+      <port direction="input" content="audio" name="Left"/>
+      <port direction="input" content="audio" name="Right"/>
+    </ports>
+  </plugin>
+</plugins>
