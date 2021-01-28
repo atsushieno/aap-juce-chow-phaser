@@ -56,9 +56,3 @@ index 8c3fe41..eec113a 100644
 +        ${cpufeatures_lib}
 +        )
 +
-diff --git a/modules/JUCE b/modules/JUCE
---- a/modules/JUCE
-+++ b/modules/JUCE
-@@ -1 +1 @@
--Subproject commit 99112cf71f0cc3aafa4622b62cf81f2b7df38f0b
-+Subproject commit 99112cf71f0cc3aafa4622b62cf81f2b7df38f0b-dirty
