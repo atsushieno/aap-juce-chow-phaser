@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 8c3fe41..eec113a 100644
+index 8c3fe41..dc5d206 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -46,12 +46,50 @@ target_compile_definitions(ChowPhaserStereo
@@ -8,6 +8,14 @@ index 8c3fe41..eec113a 100644
  
 +
 +# begin JUCEAAP specific -->
++# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
++include_directories(
++        "${AAP_DIR}/native/androidaudioplugin/core/include"
++        "${AAP_DIR}/native/plugin-api/include"
++        )
++
++juce_add_module(${AAP_JUCE_DIR}/modules/juceaap_audio_plugin_client)
++
 +if (ANDROID)
 +
 +# dependencies
@@ -17,14 +25,6 @@ index 8c3fe41..eec113a 100644
 +find_library(egl "EGL")
 +set(cpufeatures_lib "cpufeatures")
 +set(oboe_lib "oboe")
-+
-+# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
-+include_directories(
-+        "${AAP_DIR}/native/androidaudioplugin/core/include"
-+        "${AAP_DIR}/native/plugin-api/include"
-+        )
-+
-+juce_add_module(${AAP_JUCE_DIR}/modules/juceaap_audio_plugin_client)
 +
 +endif (ANDROID)
 +# <-- end JUCEAAP specific
@@ -56,3 +56,9 @@ index 8c3fe41..eec113a 100644
 +        ${cpufeatures_lib}
 +        )
 +
+diff --git a/modules/JUCE b/modules/JUCE
+--- a/modules/JUCE
++++ b/modules/JUCE
+@@ -1 +1 @@
+-Subproject commit 99112cf71f0cc3aafa4622b62cf81f2b7df38f0b
++Subproject commit 99112cf71f0cc3aafa4622b62cf81f2b7df38f0b-dirty
