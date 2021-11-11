@@ -1,12 +1,11 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 8c3fe41..dc5d206 100644
+index 75bc72a..a109fb4 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -46,12 +46,50 @@ target_compile_definitions(ChowPhaserStereo
-     FOLEYS_SHOW_GUI_EDITOR_PALLETTE=0
-     FOLEYS_ENABLE_BINARY_DATA=1)
+@@ -50,14 +50,46 @@ if(ASIOSDK_DIR)
+     target_compile_definitions(juce_plugin_modules PUBLIC JUCE_ASIO=1)
+ endif()
  
-+
 +# begin JUCEAAP specific -->
 +# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
 +include_directories(
@@ -31,34 +30,29 @@ index 8c3fe41..dc5d206 100644
 +
  target_link_libraries(ChowPhaserMono PRIVATE
      BinaryData
-     juce::juce_audio_utils
--    foleys_gui_magic)
--
-+    foleys_gui_magic
+     juce_plugin_modules
 +        juceaap_audio_plugin_client
 +        ${log}
 +        ${android}
 +        ${glesv2}
 +        ${egl}
-+        ${cpufeatures_lib}
-+        )
-+    
+ )
+ 
  target_link_libraries(ChowPhaserStereo PRIVATE
      BinaryData
-     juce::juce_audio_utils
--    foleys_gui_magic)
-+    foleys_gui_magic
+     juce_plugin_modules
 +        juceaap_audio_plugin_client
 +        ${log}
 +        ${android}
 +        ${glesv2}
 +        ${egl}
-+        ${cpufeatures_lib}
-+        )
-+
+ )
+ 
+ # we need these flags for notarization on MacOS
 diff --git a/modules/JUCE b/modules/JUCE
+index f00a420..e6ec181 160000
 --- a/modules/JUCE
 +++ b/modules/JUCE
 @@ -1 +1 @@
--Subproject commit 99112cf71f0cc3aafa4622b62cf81f2b7df38f0b
-+Subproject commit 99112cf71f0cc3aafa4622b62cf81f2b7df38f0b-dirty
+-Subproject commit f00a420bc348d79c4688b33b2b905b8ca0f25a3a
++Subproject commit e6ec1819ec0a59a7cfe82d8ce72367f64e0a4bb0-dirty
