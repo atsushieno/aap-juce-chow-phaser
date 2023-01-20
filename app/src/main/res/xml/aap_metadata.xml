@@ -1,54 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugins xmlns="urn:org.androidaudioplugin.core" xmlns:pp="urn:org.androidaudioplugin.port">
-  <plugin name="ChowPhaserStereo" category="Effect" author="chowdsp" manufacturer=""
+<plugins xmlns="urn:org.androidaudioplugin.core">
+  <plugin name="AAP ChowPhaserStereo" category="Effect" author="chowdsp" manufacturer=""
           unique-id="juceaap:43706832" library="libChowPhaserStereo_Standalone.so"
           entrypoint="GetJuceAAPFactoryStandalone" assets="">
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/presets/v1"/>
+    </extensions>
+    <parameters xmlns="urn://androidaudioplugin.org/extensions/parameters">
+      <parameter id="0" name="Feedback" direction="input" default="0.0" minimum="0.0"
+                 maximum="0.949999988079071" content="other"/>
+      <parameter id="1" name="Modulation" direction="input" default="0.0" minimum="0.0"
+                 maximum="1.0" content="other"/>
+      <parameter id="2" name="LFO Freq" direction="input" default="0.0" minimum="0.0"
+                 maximum="16.0" content="other"/>
+      <parameter id="3" name="LFO Depth" direction="input" default="0.0" minimum="0.0"
+                 maximum="0.949999988079071" content="other"/>
+      <parameter id="4" name="Freq. Mult" direction="input" default="0.0" minimum="0.0"
+                 maximum="1.0" content="other"/>
+      <parameter id="5" name="Skew" direction="input" minimum="-3.0" maximum="3.0"
+                 default="0.5833333134651184" content="other"/>
+      <parameter id="6" name="Stages" direction="input" minimum="1.0" maximum="50.0"
+                 default="0.0" content="other"/>
+      <parameter id="7" name="D1" direction="input" minimum="0.1000000014901161"
+                 maximum="5.0" default="0.01707621477544308" content="other"/>
+      <parameter id="8" name="D2" direction="input" minimum="0.1000000014901161"
+                 maximum="5.0" default="0.01707621477544308" content="other"/>
+      <parameter id="9" name="D3" direction="input" minimum="0.1000000014901161"
+                 maximum="5.0" default="0.01707621477544308" content="other"/>
+      <parameter id="10" name="Feedback" direction="input" default="0.0" minimum="0.0"
+                 maximum="0.949999988079071" content="other"/>
+      <parameter id="11" name="Modulation" direction="input" default="0.0" minimum="0.0"
+                 maximum="1.0" content="other"/>
+      <parameter id="12" name="LFO Freq" direction="input" default="0.0" minimum="0.0"
+                 maximum="16.0" content="other"/>
+      <parameter id="13" name="LFO Depth" direction="input" default="0.0" minimum="0.0"
+                 maximum="0.949999988079071" content="other"/>
+      <parameter id="14" name="Freq. Mult" direction="input" default="0.0" minimum="0.0"
+                 maximum="1.0" content="other"/>
+      <parameter id="15" name="Skew" direction="input" minimum="-3.0" maximum="3.0"
+                 default="0.5833333134651184" content="other"/>
+      <parameter id="16" name="Stages" direction="input" minimum="1.0" maximum="50.0"
+                 default="0.0" content="other"/>
+      <parameter id="17" name="D1" direction="input" minimum="0.1000000014901161"
+                 maximum="5.0" default="0.01707621477544308" content="other"/>
+      <parameter id="18" name="D2" direction="input" minimum="0.1000000014901161"
+                 maximum="5.0" default="0.01707621477544308" content="other"/>
+      <parameter id="19" name="D3" direction="input" minimum="0.1000000014901161"
+                 maximum="5.0" default="0.01707621477544308" content="other"/>
+    </parameters>
     <ports>
-      <port name="Feedback" direction="input" pp:default="0.0" pp:maximum="0.949999988079071"
-            content="other"/>
-      <port name="Modulation" direction="input" pp:default="0.0" pp:maximum="1.0"
-            content="other"/>
-      <port name="LFO Freq" direction="input" pp:default="0.0" pp:maximum="16.0"
-            content="other"/>
-      <port name="LFO Depth" direction="input" pp:default="0.0" pp:maximum="0.949999988079071"
-            content="other"/>
-      <port name="Freq. Mult" direction="input" pp:default="0.0" pp:maximum="1.0"
-            content="other"/>
-      <port name="Skew" direction="input" pp:minimum="-3.0" pp:maximum="3.0"
-            content="other"/>
-      <port name="Stages" direction="input" pp:minimum="1.0" pp:maximum="50.0"
-            content="other"/>
-      <port name="D1" direction="input" pp:minimum="0.1000000014901161" pp:maximum="5.0"
-            content="other"/>
-      <port name="D2" direction="input" pp:minimum="0.1000000014901161" pp:maximum="5.0"
-            content="other"/>
-      <port name="D3" direction="input" pp:minimum="0.1000000014901161" pp:maximum="5.0"
-            content="other"/>
-      <port name="Feedback" direction="input" pp:default="0.0" pp:maximum="0.949999988079071"
-            content="other"/>
-      <port name="Modulation" direction="input" pp:default="0.0" pp:maximum="1.0"
-            content="other"/>
-      <port name="LFO Freq" direction="input" pp:default="0.0" pp:maximum="16.0"
-            content="other"/>
-      <port name="LFO Depth" direction="input" pp:default="0.0" pp:maximum="0.949999988079071"
-            content="other"/>
-      <port name="Freq. Mult" direction="input" pp:default="0.0" pp:maximum="1.0"
-            content="other"/>
-      <port name="Skew" direction="input" pp:minimum="-3.0" pp:maximum="3.0"
-            content="other"/>
-      <port name="Stages" direction="input" pp:minimum="1.0" pp:maximum="50.0"
-            content="other"/>
-      <port name="D1" direction="input" pp:minimum="0.1000000014901161" pp:maximum="5.0"
-            content="other"/>
-      <port name="D2" direction="input" pp:minimum="0.1000000014901161" pp:maximum="5.0"
-            content="other"/>
-      <port name="D3" direction="input" pp:minimum="0.1000000014901161" pp:maximum="5.0"
-            content="other"/>
       <port direction="output" content="audio" name="Left"/>
       <port direction="output" content="audio" name="Right"/>
       <port direction="input" content="audio" name="Left"/>
       <port direction="input" content="audio" name="Right"/>
+      <port direction="input" content="midi2" name="MIDI input"/>
     </ports>
   </plugin>
 </plugins>

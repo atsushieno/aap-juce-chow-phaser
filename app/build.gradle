@@ -3,25 +3,29 @@ plugins {
     id 'kotlin-android'
 }
 
-
 android {
-    compileSdkVersion 31
+    namespace "org.androidaudioplugin.ports.juce.chow_phaser"
+    compileSdkVersion 33
     externalNativeBuild {
         cmake {
-            path "CMakeLists.txt"
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.22.1"
         }
     }
 
     defaultConfig {
-        applicationId "org.androidaudioplugin.samples.chow_phaser"
+        applicationId "org.androidaudioplugin.ports.juce.chow_phaser"
         minSdkVersion    29
-        targetSdkVersion 31
+        targetSdkVersion 33
         externalNativeBuild {
             cmake {
-                arguments "-DJUCE_DIR=${System.env.JUCE_DIR != null ? System.env.JUCE_DIR : ''}", "-DAAP_DIR=${System.env.AAP_DIR != null ? System.env.AAP_DIR : ''}", "-DAAP_JUCE_DIR=${System.env.AAP_JUCE_DIR != null ? System.env.AAP_JUCE_DIR : ''}", "-DANDROID_STL=c++_static", "-DANDROID_CPP_FEATURES=exceptions rtti"
+                arguments "-DJUCE_DIR=${System.env.JUCE_DIR != null ? System.env.JUCE_DIR : "$projectDir/../modules/JUCE"}", "-DAAP_DIR=${System.env.AAP_DIR != null ? System.env.AAP_DIR : "$projectDir/../external/aap-core"}", "-DAAP_JUCE_DIR=${System.env.AAP_JUCE_DIR != null ? System.env.AAP_JUCE_DIR : "$projectDir/../external/aap-juce"}", "-DANDROID_STL=c++_shared", "-DANDROID_CPP_FEATURES=exceptions rtti", "-DANDROID_ARM_NEON=ON"
             }
         }
-        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+
+    buildFeatures {
+        prefab true
     }
 
     sourceSets {
@@ -32,20 +36,12 @@ android {
     }
 
     dependencies {
-        implementation "androidx.startup:startup-runtime:1.1.0"
-        implementation "org.androidaudioplugin:androidaudioplugin:0.6.21"
+        implementation "androidx.core:core-ktx:1.9.0"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        implementation "androidx.startup:startup-runtime:1.1.1"
+        implementation "org.androidaudioplugin:androidaudioplugin:$aap_version"
     }
 
-    lintOptions {
-        abortOnError false
-    }
-}
-dependencies {
-    implementation "androidx.core:core-ktx:1.7.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-}
-repositories {
-    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
-    mavenCentral()
+    ndkVersion "$ndk_version"
 }
 
