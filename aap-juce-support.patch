@@ -48,10 +48,3 @@ index 75bc72a..d48e847 100644
  )
  
  # we need these flags for notarization on MacOS
-diff --git a/modules/JUCE b/modules/JUCE
-index f00a420..e6ec181 160000
---- a/modules/JUCE
-+++ b/modules/JUCE
-@@ -1 +1 @@
--Subproject commit f00a420bc348d79c4688b33b2b905b8ca0f25a3a
-+Subproject commit e6ec1819ec0a59a7cfe82d8ce72367f64e0a4bb0-dirty
