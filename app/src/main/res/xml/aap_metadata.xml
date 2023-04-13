@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugins xmlns="urn:org.androidaudioplugin.core">
-  <plugin name="AAP ChowPhaserStereo" category="Effect" author="chowdsp" manufacturer=""
+  <plugin name="ChowPhaserStereo" category="Effect" author="chowdsp" developer="chowdsp"
           unique-id="juceaap:43706832" library="libChowPhaserStereo_Standalone.so"
-          entrypoint="GetJuceAAPFactoryStandalone" assets="">
+          entrypoint="GetJuceAAPFactoryStandalone">
     <extensions>
-      <extension uri="urn://androidaudioplugin.org/extensions/presets/v1"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/presets/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/midi2/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v2"/>
     </extensions>
     <parameters xmlns="urn://androidaudioplugin.org/extensions/parameters">
-      <parameter id="0" name="Feedback" direction="input" default="0.0" minimum="0.0"
-                 maximum="0.949999988079071" content="other"/>
-      <parameter id="1" name="Modulation" direction="input" default="0.0" minimum="0.0"
-                 maximum="1.0" content="other"/>
-      <parameter id="2" name="LFO Freq" direction="input" default="0.0" minimum="0.0"
-                 maximum="16.0" content="other"/>
-      <parameter id="3" name="LFO Depth" direction="input" default="0.0" minimum="0.0"
-                 maximum="0.949999988079071" content="other"/>
-      <parameter id="4" name="Freq. Mult" direction="input" default="0.0" minimum="0.0"
-                 maximum="1.0" content="other"/>
+      <parameter id="0" name="Feedback" direction="input" minimum="0.0" maximum="0.949999988079071"
+                 default="0.0" content="other"/>
+      <parameter id="1" name="Modulation" direction="input" minimum="0.0" maximum="1.0"
+                 default="0.0" content="other"/>
+      <parameter id="2" name="LFO Freq" direction="input" minimum="0.0" maximum="16.0"
+                 default="0.0" content="other"/>
+      <parameter id="3" name="LFO Depth" direction="input" minimum="0.0" maximum="0.949999988079071"
+                 default="0.0" content="other"/>
+      <parameter id="4" name="Freq. Mult" direction="input" minimum="0.0" maximum="1.0"
+                 default="0.0" content="other"/>
       <parameter id="5" name="Skew" direction="input" minimum="-3.0" maximum="3.0"
                  default="0.5833333134651184" content="other"/>
       <parameter id="6" name="Stages" direction="input" minimum="1.0" maximum="50.0"
@@ -28,16 +32,16 @@
                  maximum="5.0" default="0.01707621477544308" content="other"/>
       <parameter id="9" name="D3" direction="input" minimum="0.1000000014901161"
                  maximum="5.0" default="0.01707621477544308" content="other"/>
-      <parameter id="10" name="Feedback" direction="input" default="0.0" minimum="0.0"
-                 maximum="0.949999988079071" content="other"/>
-      <parameter id="11" name="Modulation" direction="input" default="0.0" minimum="0.0"
-                 maximum="1.0" content="other"/>
-      <parameter id="12" name="LFO Freq" direction="input" default="0.0" minimum="0.0"
-                 maximum="16.0" content="other"/>
-      <parameter id="13" name="LFO Depth" direction="input" default="0.0" minimum="0.0"
-                 maximum="0.949999988079071" content="other"/>
-      <parameter id="14" name="Freq. Mult" direction="input" default="0.0" minimum="0.0"
-                 maximum="1.0" content="other"/>
+      <parameter id="10" name="Feedback" direction="input" minimum="0.0" maximum="0.949999988079071"
+                 default="0.0" content="other"/>
+      <parameter id="11" name="Modulation" direction="input" minimum="0.0" maximum="1.0"
+                 default="0.0" content="other"/>
+      <parameter id="12" name="LFO Freq" direction="input" minimum="0.0" maximum="16.0"
+                 default="0.0" content="other"/>
+      <parameter id="13" name="LFO Depth" direction="input" minimum="0.0" maximum="0.949999988079071"
+                 default="0.0" content="other"/>
+      <parameter id="14" name="Freq. Mult" direction="input" minimum="0.0" maximum="1.0"
+                 default="0.0" content="other"/>
       <parameter id="15" name="Skew" direction="input" minimum="-3.0" maximum="3.0"
                  default="0.5833333134651184" content="other"/>
       <parameter id="16" name="Stages" direction="input" minimum="1.0" maximum="50.0"

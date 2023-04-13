@@ -43,6 +43,6 @@ android {
         implementation libs.aap.core
     }
 
-    ndkVersion "$ndk_version"
+    ndkVersion libs.versions.ndk.get()
 }
 
