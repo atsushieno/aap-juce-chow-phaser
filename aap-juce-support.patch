@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 75bc72a..4782a88 100644
+index 75bc72a..f050942 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -50,14 +50,47 @@ if(ASIOSDK_DIR)
@@ -12,7 +12,7 @@ index 75bc72a..4782a88 100644
 +        "${AAP_DIR}/include"
 +        )
 +
-+juce_add_module(${AAP_JUCE_DIR}/aap-modules/juceaap_audio_plugin_client)
++juce_add_module(${AAP_JUCE_DIR}/aap-modules/aap_audio_processors)
 +
 +add_compile_definitions([[JUCE_DONT_AUTO_OPEN_MIDI_DEVICES_ON_MOBILE=1]])
 +
@@ -32,7 +32,7 @@ index 75bc72a..4782a88 100644
  target_link_libraries(ChowPhaserMono PRIVATE
      BinaryData
      juce_plugin_modules
-+        juceaap_audio_plugin_client
++        aap_audio_processors
 +        ${log}
 +        ${android}
 +        ${glesv2}
@@ -42,7 +42,7 @@ index 75bc72a..4782a88 100644
  target_link_libraries(ChowPhaserStereo PRIVATE
      BinaryData
      juce_plugin_modules
-+        juceaap_audio_plugin_client
++        aap_audio_processors
 +        ${log}
 +        ${android}
 +        ${glesv2}
