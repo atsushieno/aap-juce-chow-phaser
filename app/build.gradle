@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace "org.androidaudioplugin.ports.juce.chow_phaser"
-    compileSdkVersion 33
+    compileSdk = 33
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
@@ -15,11 +15,12 @@ android {
 
     defaultConfig {
         applicationId "org.androidaudioplugin.ports.juce.chow_phaser"
-        minSdkVersion    29
-        targetSdkVersion 33
+        minSdk = 29
         externalNativeBuild {
             cmake {
-                arguments "-DJUCE_DIR=${System.env.JUCE_DIR != null ? System.env.JUCE_DIR : "$projectDir/../modules/JUCE"}", "-DAAP_DIR=${System.env.AAP_DIR != null ? System.env.AAP_DIR : "$projectDir/../external/aap-core"}", "-DAAP_JUCE_DIR=${System.env.AAP_JUCE_DIR != null ? System.env.AAP_JUCE_DIR : "$projectDir/../external/aap-juce"}", "-DANDROID_STL=c++_shared", "-DANDROID_CPP_FEATURES=exceptions rtti", "-DANDROID_ARM_NEON=ON"
+                arguments "-DAAP_DIR=${System.env.AAP_DIR != null ? System.env.AAP_DIR : "$projectDir/../external/aap-core"}",
+                        "-DAAP_JUCE_DIR=${System.env.AAP_JUCE_DIR != null ? System.env.AAP_JUCE_DIR : "$projectDir/../external/aap-juce"}",
+                        "-DANDROID_STL=c++_shared", "-DANDROID_CPP_FEATURES=exceptions rtti"//, "-DANDROID_ARM_NEON=ON"
             }
         }
     }
@@ -38,11 +39,15 @@ android {
     dependencies {
         implementation libs.androidx.core.ktx
         implementation libs.startup.runtime
-        // FIXME: this should not be required, should be another reason that blocks it from loading.
-        implementation libs.libcxx.provider
         implementation libs.aap.core
+        implementation libs.aap.ui.web
+        implementation libs.aap.ui.compose
     }
 
     ndkVersion libs.versions.ndk.get()
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
