@@ -7,4 +7,4 @@ dist
 
 .stamp-juce
 .stamp-app
-
+.DS_Store
