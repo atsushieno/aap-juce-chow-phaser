@@ -36,7 +36,7 @@
         android:authorities="${applicationId}.androidx-startup"
         android:exported="false"
         tools:node="merge">
-        <meta-data android:name="dev.atsushieno.juce.JuceAppInitializer" android:value="androidx.startup" />
+        <meta-data android:name="org.androidaudioplugin.juce.JuceAppInitializer" android:value="androidx.startup" />
     </provider>
   </application>
 </manifest>
